@@ -13,12 +13,16 @@ class AppWidget extends StatelessWidget {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
-              primarySwatch: Colors.deepPurple,
+              primarySwatch: Colors.purple,
               brightness: AppController.instance.isDartTheme
                   ? Brightness.dark
                   : Brightness.light,
             ),
-            home: LoginPage(),
+            initialRoute: '/',
+            routes: {
+              '/': (context) => LoginPage(),
+              '/home': (context) => HomePage(),
+            },
           );
         });
   }
